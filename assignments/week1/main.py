@@ -8,8 +8,6 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 from typing import Tuple
 
-#%%
-
 
 def get_housing_data() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
@@ -35,37 +33,36 @@ def get_housing_data() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
 
 
 #%%
+# def main():
+"""
+Run the main program, which trains a linear regression model on the
+California housing data.
 
+Arguments:
+    None
 
-def main():
-    """
-    Run the main program, which trains a linear regression model on the
-    California housing data.
+Returns:
+    None
 
-    Arguments:
-        None
+"""
+# Get the data:
+X_train, X_test, y_train, y_test = get_housing_data()
 
-    Returns:
-        None
+# Create a linear regression model:
+lr = LinearRegression()
 
-    """
-    # Get the data:
-    X_train, X_test, y_train, y_test = get_housing_data()
+# Fit the model to the training data:
+lr.fit(X_train, y_train)
 
-    # Create a linear regression model:
-    lr = LinearRegression()
+# Make predictions on the test data:
+y_pred = lr.predict(X_test)
 
-    # Fit the model to the training data:
-    lr.fit(X_train, y_train)
+# Compute the mean squared error:
+mse = mean_squared_error(y_test, y_pred)
 
-    # Make predictions on the test data:
-    y_pred = lr.predict(X_test)
-
-    # Compute the mean squared error:
-    mse = mean_squared_error(y_test, y_pred)
-
-    # Print the mean squared error:
-    print("Mean squared error: {:.2f}".format(mse))
+# Print the mean squared error:
+print("Mean squared error: {:.2f}".format(mse))
 
 
 # %%
+main()

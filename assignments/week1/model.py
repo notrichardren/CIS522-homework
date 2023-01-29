@@ -15,12 +15,12 @@ class LinearRegression:
         self.b = np.random.uniform(-np.sqrt(3), np.sqrt(3))
 
     def fit(self, X, y):  # analytical solution
-        params = np.linalg.inv(x.T @ X) @ X.T @ Y
+        params = np.linalg.inv(X.T @ X) @ X.T @ y
         w = params[:-1]
         b = params[-1]
 
     def predict(self, X):
-        X * self.w + self.b
+        return (X @ self.w) + self.b
 
 
 #%%
