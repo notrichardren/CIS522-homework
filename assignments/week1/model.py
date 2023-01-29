@@ -1,4 +1,8 @@
+#%%
+
 import numpy as np
+
+#%%
 
 
 class LinearRegression:
@@ -7,14 +11,18 @@ class LinearRegression:
     b: float
 
     def __init__(self):
-        raise NotImplementedError()
+        self.w = None
+        self.b = None
 
-    def fit(self, X, y):
-        raise NotImplementedError()
+    def fit(self, X, y): # analytical solution
+        w = np.linalg.inv(x.T @ X) @ X.T @ Y
+        b = # no clue
 
     def predict(self, X):
-        raise NotImplementedError()
+        X*self.w+self.b
 
+
+#%%
 
 class GradientDescentLinearRegression(LinearRegression):
     """
@@ -24,6 +32,12 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
+        for i in range(epochs):
+            
+            # make predictions
+            # compute loss
+
+
         raise NotImplementedError()
 
     def predict(self, X: np.ndarray) -> np.ndarray:
@@ -37,4 +51,4 @@ class GradientDescentLinearRegression(LinearRegression):
             np.ndarray: The predicted output.
 
         """
-        raise NotImplementedError()
+        return X*self.w+self.b
