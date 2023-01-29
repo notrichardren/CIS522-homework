@@ -10,14 +10,14 @@ class LinearRegression:
     w: np.ndarray
     b: float
 
-    def __init__(self):  # Xavier initialization, n_in = 1, n_out = 1
-        self.w = np.random.uniform(-np.sqrt(3), np.sqrt(3))
-        self.b = np.random.uniform(-np.sqrt(3), np.sqrt(3))
+    def __init__(self):
+        self.w = None
+        self.b = None
 
     def fit(self, X, y):  # analytical solution
         params = np.linalg.inv(X.T @ X) @ X.T @ y
-        w = params[:-1]
-        b = params[-1]
+        self.w = params[:-1]
+        self.b = params[-1]
 
     def predict(self, X):
         return (X @ self.w) + self.b
@@ -34,6 +34,10 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
+
+        # Xavier initialization, n_in = 1, n_out = 1
+        self.w = np.random.uniform(-np.sqrt(3), np.sqrt(3))
+        self.b = np.random.uniform(-np.sqrt(3), np.sqrt(3))
 
         # shuffle data
 

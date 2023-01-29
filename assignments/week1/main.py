@@ -62,7 +62,3 @@ mse = mean_squared_error(y_test, y_pred)
 
 # Print the mean squared error:
 print("Mean squared error: {:.2f}".format(mse))
-
-
-# %%
-main()
