@@ -12,8 +12,12 @@ class LinearRegression:
         self.b = None
 
     def fit(self, X, y):  # analytical solution
+        # params = np.linalg.inv(X.T @ X) @ X.T @ y
+        # self.w = params[:-1]
+        # self.b = params[-1]
         self.w = np.linalg.inv(X.T @ X) @ X.T @ y
         self.b = np.zeros(X.shape[0]) # NEED TO CHANGE THIS
+        # supposed to be a float
 
     def predict(self, X):
         return X @ self.w
@@ -36,6 +40,8 @@ class GradientDescentLinearRegression(LinearRegression):
 
         # Do I need to use batches?
         y = y.reshape(y.shape[0], 1)
+
+        guo chei bryan jesse kabian lavnik yishak
 
         for i in range(epochs):
 
