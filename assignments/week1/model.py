@@ -1,5 +1,6 @@
 import numpy as np
 
+# Chaithanya Sai Karne as a collaborator
 
 class LinearRegression:
 
@@ -47,7 +48,7 @@ class GradientDescentLinearRegression(LinearRegression):
 
             # Compute gradient
 
-            
+
 
             # Update parameters
             self.w = 
