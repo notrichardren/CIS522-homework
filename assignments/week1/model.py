@@ -47,8 +47,7 @@ class GradientDescentLinearRegression(LinearRegression):
 
             # Compute gradient
 
-
-            # 2* (X.T.dot (preds- y) )/X. shape[ 0 ]
+            
 
             # Update parameters
             self.w = 
