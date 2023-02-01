@@ -40,7 +40,7 @@ class GradientDescentLinearRegression(LinearRegression):
             y_hat = self.predict(X)
 
             # Compute loss as the mean squared error
-            l = (y_hat - y) ** 2
+            loss = (y_hat - y) ** 2
             print(f"Epoch {i}: Loss {l}")
 
             # Compute gradient of the weight

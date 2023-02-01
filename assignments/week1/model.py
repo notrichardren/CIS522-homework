@@ -3,7 +3,8 @@ import numpy as np
 
 class LinearRegression:
     """
-    A linear regression model that uses an analytical solution to fit the model. Bias not implemented because Ed says it was OK to do so.
+    A linear regression model that uses an analytical solution to fit the model.
+    Bias not implemented because Ed says it was OK to do so.
     """
 
     w: np.ndarray
@@ -50,7 +51,8 @@ class LinearRegression:
 
 class GradientDescentLinearRegression(LinearRegression):
     """
-    A linear regression model that uses gradient descent to fit the model. Bias not implemented because Ed says it was OK to do so.
+    A linear regression model that uses gradient descent to fit the model.
+    Bias not implemented because Ed says it was OK to do so.
     """
 
     def fit(
