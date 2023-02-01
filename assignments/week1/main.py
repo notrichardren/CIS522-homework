@@ -1,5 +1,3 @@
-#%%
-
 # Import your model:
 from model import LinearRegression
 from sklearn.datasets import fetch_california_housing
@@ -13,16 +11,13 @@ def get_housing_data() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     Get the California housing data from sklearn.
     (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html)
-
     Arguments:
         None
-
     Returns:
         X_train (np.ndarray): The training input data.
         X_test (np.ndarray): The test input data.
         y_train (np.ndarray): The training output data.
         y_test (np.ndarray): The test output data.
-
     """
     housing = fetch_california_housing()
     # Split the data into training and test sets:
@@ -32,33 +27,29 @@ def get_housing_data() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     return X_train, X_test, y_train, y_test
 
 
-#%%
-# def main():
-"""
-Run the main program, which trains a linear regression model on the
-California housing data.
+def main():
+    """
+    Run the main program, which trains a linear regression model on the
+    California housing data.
+    Arguments:
+        None
+    Returns:
+        None
+    """
+    # Get the data:
+    X_train, X_test, y_train, y_test = get_housing_data()
 
-Arguments:
-    None
+    # Create a linear regression model:
+    lr = LinearRegression()
 
-Returns:
-    None
+    # Fit the model to the training data:
+    lr.fit(X_train, y_train)
 
-"""
-# Get the data:
-X_train, X_test, y_train, y_test = get_housing_data()
+    # Make predictions on the test data:
+    y_pred = lr.predict(X_test)
 
-# Create a linear regression model:
-lr = LinearRegression()
+    # Compute the mean squared error:
+    mse = mean_squared_error(y_test, y_pred)
 
-# Fit the model to the training data:
-lr.fit(X_train, y_train)
-
-# Make predictions on the test data:
-y_pred = lr.predict(X_test)
-
-# Compute the mean squared error:
-mse = mean_squared_error(y_test, y_pred)
-
-# Print the mean squared error:
-print("Mean squared error: {:.2f}".format(mse))
+    # Print the mean squared error:
+    print("Mean squared error: {:.2f}".format(mse))
