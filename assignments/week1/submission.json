@@ -2,8 +2,12 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Jordan Matelsky",
-            "pennkey": "matelsky"
+            "name": "Richard Ren",
+            "pennkey": "renrich"
+        }, 
+        {
+            "name": "Chaithanya Sai Karne",
+            "pennkey": "ckarne"
         }
     ],
     "sources": [

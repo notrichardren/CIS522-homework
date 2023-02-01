@@ -1,6 +1,5 @@
 import numpy as np
 
-# Chaithanya Sai Karne as a collaborator
 
 class LinearRegression:
 
@@ -8,19 +7,22 @@ class LinearRegression:
     b: float
 
     def __init__(self):
-        self.w = None
-        self.b = None
+        self.w = np.zeros((2, 2))
+        self.b = np.zeros((2, 2))
 
-    def fit(self, X, y):  # analytical solution
-        # params = np.linalg.inv(X.T @ X) @ X.T @ y
-        # self.w = params[:-1]
-        # self.b = params[-1]
-        self.w = np.linalg.inv(X.T @ X) @ X.T @ y
-        self.b = np.zeros(X.shape[0]) # NEED TO CHANGE THIS
-        # supposed to be a float
+    def fit(self, X, y):
+        if np.linalg.det(X.T @ X) != 0:
+            self.w = (np.linalg.inv(X.T @ X)) @ (X.T @ y)
+        else:
+            print(
+                "Closed form solution not possible here as determinant of X.T@X is not zero"
+            )
+            return None
 
     def predict(self, X):
-        return X @ self.w
+        self.b = np.zeros((X.shape[0],))
+        preds = (X @ self.w.T) + self.b
+        return preds
 
 
 class GradientDescentLinearRegression(LinearRegression):
@@ -31,33 +33,19 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
-
-        # Xavier initialization, n_in = 1, n_out = 1
-        self.w = np.random.uniform(-np.sqrt(3), np.sqrt(3))
-        self.b = np.random.uniform(-np.sqrt(3), np.sqrt(3))
-
-        # Shuffle data
-
-        # Do I need to use batches?
+        np.random.seed(42)
+        self.w = np.random.randn(X.shape[1], 1)  # initial weights
         y = y.reshape(y.shape[0], 1)
+        losses = []
 
-        guo chei bryan jesse kabian lavnik yishak
-
-        for i in range(epochs):
-
-            # Make prediction
-            y_hat = self.predict(X)
-
-            # Compute loss as the mean squared error
-            l = (y_hat - y) ** 2
-            print(f"Epoch {i}: Loss {l}")
-
-            # Compute gradient
-
-
-
-            # Update parameters
-            self.w = 
+        for i in range(0, epochs):
+            preds = X @ self.w
+            loss = (np.sum((preds - y) ** 2)) / X.shape[0]
+            losses.append(loss)
+            if i % 100 == 0:
+                print(f"Loss in epoch {i} is {loss}")
+            gradients = 2 * (X.T.dot(preds - y)) / X.shape[0]
+            self.w = self.w - lr * gradients
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -70,4 +58,5 @@ class GradientDescentLinearRegression(LinearRegression):
             np.ndarray: The predicted output.
 
         """
-        return X * self.w + self.b
+        preds = X @ self.w
+        return preds
