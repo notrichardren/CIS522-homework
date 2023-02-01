@@ -41,7 +41,7 @@ class GradientDescentLinearRegression(LinearRegression):
 
             # Compute loss as the mean squared error
             loss = (y_hat - y) ** 2
-            print(f"Epoch {i}: Loss {l}")
+            print(f"Epoch {i}: Loss {loss}")
 
             # Compute gradient of the weight
             # Compute gradient of the bias
