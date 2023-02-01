@@ -33,6 +33,7 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
+
         np.random.seed(42)
         self.w = np.random.randn(X.shape[1], 1)  # initial weights
         y = y.reshape(y.shape[0], 1)
