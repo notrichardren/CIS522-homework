@@ -17,6 +17,7 @@ Once you have passed all unit tests, your code will be automatically submitted t
 ## Assignments
 
 1. [Linear Regression and Gradient Descent](assignments/week1/README.md). Write a linear regression model from scratch, and see how gradient descent compares to the closed form solution.
+2. [Multilayer Perceptrons](assignments/week3). 
 
 ## Getting Started
 
@@ -57,3 +58,10 @@ Click on "New repository secret" and add the token as the value (use the token y
 <img width="842" alt="image" src="https://user-images.githubusercontent.com/693511/212491427-6bfa0cff-b6c7-4c05-b8e0-26a33d93cb1d.png">
 
 Click "Add secret" and you're done; pushes to your main trunk branch will now be automatically submitted to the leaderboard!
+
+
+## How to Submit
+
+- [ ] Update `submission.json` with your team's usernames and info. Don't forget to cite your sources if you used any external references!
+- [ ] Push changes to the trunk branch (`main`) of your repository (if you're working from pull requests, remember to make your pull requests against your fork, not this upstream repo!)
+- [ ] Optionally, add detailed attribution text to (new file) ATTRIBUTION.md if you want to explain some of your code attribution more than a line or two in `submission.json`. (Remember that failing to correctly cite your sources for code is like plagiarising an essay: This is important!)
