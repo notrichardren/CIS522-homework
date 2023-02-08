@@ -1,3 +1,5 @@
+#%%
+
 """
 Run the MLP training and evaluation pipeline.
 """
@@ -17,6 +19,8 @@ from torch.nn import CrossEntropyLoss
 # Other:
 from typing import Tuple
 from tqdm import tqdm
+
+#%%
 
 # The transform list is a set of operations that we apply to the data
 # before we use it. In this case, we convert the data to a tensor and

@@ -2,13 +2,13 @@
     "assignment_name": "MLP",
     "contributors": [
         {
-            "name": "Jordan Matelsky",
-            "pennkey": "matelsky"
+            "name": "Richard Ren",
+            "pennkey": "renrich"
         }
     ],
     "sources": [
-        "https://example.com",
-        "Conversations with TA (include TA's name)",
-        "LLM (include information about the LLM and how it was used)"
+        "https://pytorch.org/docs/stable/generated/torch.nn.ModuleList.html",
+        "https://pytorch.org/docs/stable/nn.init.html",
+        "Did not fully work on Chaithanya on this assignment (we stil have separate submissions), but asked him for help on certain bugs"
     ]
 }
