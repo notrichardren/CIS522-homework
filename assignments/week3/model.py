@@ -46,7 +46,7 @@ class MLP(torch.nn.Module):
             if isinstance(layer, torch.nn.Linear):
                 initializer(layer.weight.data)
 
-    def forward(self, x):
+    def forward(self, x) -> torch.Tensor:
         """
         Forward pass of the network.
 
@@ -56,6 +56,8 @@ class MLP(torch.nn.Module):
         Returns:
             The output of the network.
         """
-        self.layers(x)
+        for function in self.layers:
+            x = function(x)
+        return x
         
 # %%
