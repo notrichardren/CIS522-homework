@@ -1,10 +1,5 @@
-#%%
-
 import torch
 from typing import Callable
-
-
-#%%
 
 
 class MLP(torch.nn.Module):
@@ -60,6 +55,3 @@ class MLP(torch.nn.Module):
         for function in self.layers:
             x = function(x)
         return x
-
-
-# %%

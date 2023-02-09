@@ -1,7 +1,5 @@
 # DOC: MODIFIED TO DO HYPERPARAMETER TUNING
 
-#%%
-
 """
 Run the MLP training and evaluation pipeline.
 """
@@ -23,8 +21,6 @@ from model import MLP
 # Other:
 from typing import Tuple
 from tqdm import tqdm
-
-#%%
 
 # The transform list is a set of operations that we apply to the data
 # before we use it. In this case, we convert the data to a tensor and
@@ -177,28 +173,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# %%
-
-"""
-Epoch: 9, Accuracy: 0.9107: 100%|██████████| 10/10 [01:14<00:00,  7.40s/it]
-Epoch: 9, Accuracy: 0.1331: 100%|██████████| 10/10 [01:20<00:00,  8.03s/it]
-Epoch: 9, Accuracy: 0.1032: 100%|██████████| 10/10 [01:31<00:00,  9.13s/it]
-Epoch: 9, Accuracy: 0.0974: 100%|██████████| 10/10 [01:33<00:00,  9.33s/it]
-Epoch: 9, Accuracy: 0.9038: 100%|██████████| 10/10 [01:37<00:00,  9.78s/it]
-Epoch: 9, Accuracy: 0.0982: 100%|██████████| 10/10 [02:24<00:00, 14.46s/it]
-Epoch: 9, Accuracy: 0.1032: 100%|██████████| 10/10 [03:16<00:00, 19.65s/it]
-Epoch: 9, Accuracy: 0.0990: 100%|██████████| 10/10 [04:08<00:00, 24.81s/it]
-Epoch: 9, Accuracy: 0.9015: 100%|██████████| 10/10 [01:39<00:00,  9.93s/it]
-Epoch: 9, Accuracy: 0.1032: 100%|██████████| 10/10 [02:58<00:00, 17.85s/it]
-Epoch: 9, Accuracy: 0.0974: 100%|██████████| 10/10 [04:21<00:00, 26.17s/it]
-Epoch: 9, Accuracy: 0.0975: 100%|██████████| 10/10 [05:26<00:00, 32.60s/it]
-Epoch: 9, Accuracy: 0.8890: 100%|██████████| 10/10 [01:46<00:00, 10.61s/it]
-Epoch: 9, Accuracy: 0.1135: 100%|██████████| 10/10 [03:23<00:00, 20.32s/it]
-Epoch: 9, Accuracy: 0.1135: 100%|██████████| 10/10 [06:47<00:00, 40.76s/it]
-Epoch: 9, Accuracy: 0.0979: 100%|██████████| 10/10 [08:52<00:00, 53.25s/it]
-Epoch: 9, Accuracy: 0.8317: 100%|██████████| 10/10 [02:10<00:00, 13.04s/it]
-Epoch: 9, Accuracy: 0.1010: 100%|██████████| 10/10 [04:38<00:00, 27.82s/it]
-Epoch: 9, Accuracy: 0.1135: 100%|██████████| 10/10 [07:09<00:00, 42.91s/it]
-Epoch: 9, Accuracy: 0.1010: 100%|██████████| 10/10 [10:05<00:00, 60.54s/it]
-"""
