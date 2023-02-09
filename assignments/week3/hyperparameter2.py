@@ -139,7 +139,6 @@ def train(
 
 
 def main():
-
     highPerf = 0
     highPerf_hiddensize = 0
     highPerf_hiddencount = 0

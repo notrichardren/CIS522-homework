@@ -2,7 +2,6 @@ import numpy as np
 
 
 class LinearRegression:
-
     w: np.ndarray
     b: float
 
@@ -27,7 +26,6 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
     ) -> None:
-
         # Xavier initialization, n_in = 1, n_out = 1
         self.w = np.random.uniform(-np.sqrt(3), np.sqrt(3))
         self.b = np.random.uniform(-np.sqrt(3), np.sqrt(3))
@@ -35,7 +33,6 @@ class GradientDescentLinearRegression(LinearRegression):
         for i in range(
             epochs
         ):  # One epoch is one round on the entire dataset -- so just use the entire matrix
-
             # Make prediction
             y_hat = self.predict(X)
 
