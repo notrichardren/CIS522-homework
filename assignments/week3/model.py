@@ -6,13 +6,14 @@ from typing import Callable
 
 #%%
 
+
 class MLP(torch.nn.Module):
     def __init__(
         self,
-        input_size: int, # input-dim
-        hidden_size: int, 
-        num_classes: int, # output-dim
-        hidden_count: int = 1, # number of hidden dimensions
+        input_size: int,  # input-dim
+        hidden_size: int,
+        num_classes: int,  # output-dim
+        hidden_count: int = 1,  # number of hidden dimensions
         activation: Callable = torch.nn.ReLU,
         initializer: Callable = torch.nn.init.ones_,
     ) -> None:
@@ -40,7 +41,7 @@ class MLP(torch.nn.Module):
                 self.layers += [torch.nn.Linear(hidden_size, num_classes)]
             else:
                 self.layers += [torch.nn.Linear(hidden_size, hidden_size)]
-                self.layers += [activation()]    
+                self.layers += [activation()]
 
         for layer in list(self.layers):
             if isinstance(layer, torch.nn.Linear):
@@ -59,5 +60,6 @@ class MLP(torch.nn.Module):
         for function in self.layers:
             x = function(x)
         return x
-        
+
+
 # %%

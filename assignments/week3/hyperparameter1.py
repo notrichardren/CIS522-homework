@@ -153,7 +153,9 @@ def main():
             # Get the data:
             train_loader, test_loader = get_mnist_data()
             # Create the model:
-            model = MLP(784, hidden_size, 10, hidden_count, torch.nn.ReLU, torch.nn.init.ones_)
+            model = MLP(
+                784, hidden_size, 10, hidden_count, torch.nn.ReLU, torch.nn.init.ones_
+            )
             # Train the model:
             accuracy = train(
                 model=model,
@@ -163,11 +165,11 @@ def main():
                 learning_rate=0.001,
                 device=torch.device("cuda" if torch.cuda.is_available() else "cpu"),
             )
-            if (highPerf < accuracy):
+            if highPerf < accuracy:
                 accuracy = highPerf
                 highPerf_hiddensize = hidden_size
                 highPerf_hiddencount = hidden_count
-    
+
     print(f"Accuracy: {highPerf}")
     print(f"Hidden Size: {hidden_size}")
     print(f"Hidden Count: {hidden_count}")
