@@ -72,26 +72,26 @@ class Model(torch.nn.Module):
 # use any code from ChatGPT.
 
 """
-I can give you some general tips on how to design a neural network architecture that can train 
+I can give you some general tips on how to design a neural network architecture that can train
 quickly and efficiently on image classification tasks:
 
-Use small kernels: Smaller kernels (e.g. 3x3 or 5x5) can be more efficient than larger kernels, as 
-they require fewer parameters and can capture local features more effectively. However, you might \
+Use small kernels: Smaller kernels (e.g. 3x3 or 5x5) can be more efficient than larger kernels, as
+they require fewer parameters and can capture local features more effectively. However, you might
 need to use multiple layers to capture more complex patterns.
 
-Use max pooling: Max pooling can be used to downsample the feature maps and reduce the number of 
+Use max pooling: Max pooling can be used to downsample the feature maps and reduce the number of
 parameters in the network. However, it can also result in some loss of information.
 
-Use batch normalization: Batch normalization can help stabilize the training process and reduce the 
+Use batch normalization: Batch normalization can help stabilize the training process and reduce the
 number of epochs required to reach convergence.
 
-Use skip connections: Skip connections can help improve the gradient flow during training and 
-prevent the vanishing gradient problem. They can also help reduce the number of parameters required 
+Use skip connections: Skip connections can help improve the gradient flow during training and
+prevent the vanishing gradient problem. They can also help reduce the number of parameters required
 in the network.
 
-Use data augmentation: Data augmentation can help increase the amount of training data and improve 
+Use data augmentation: Data augmentation can help increase the amount of training data and improve
 the generalization performance of the network.
 
-Use early stopping: Early stopping can help prevent overfitting and reduce the training time 
+Use early stopping: Early stopping can help prevent overfitting and reduce the training time
 required to reach a good level of performance.
 """
