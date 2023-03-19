@@ -53,8 +53,8 @@ import torch
 #         x = self.fc2(x)
 #         return x
 
+
 class Model(torch.nn.Module):
-    
     def __init__(self, num_channels: int, num_classes: int) -> None:
         super().__init__()
         """
@@ -102,7 +102,7 @@ class Model(torch.nn.Module):
         return x
 
 
-# I asked ChatGPT 3.5 to give some general tips for now to make a good-performing model. I did not 
+# I asked ChatGPT 3.5 to give some general tips for now to make a good-performing model. I did not
 # use any code from ChatGPT.
 
 """
