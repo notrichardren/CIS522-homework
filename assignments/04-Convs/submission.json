@@ -7,6 +7,8 @@
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html",
+        "https://en.wikipedia.org/wiki/LeNet",
+        "Asked ChatGPT for advice on how to build a good-performing model; did not use code generation. Advice pasted in model.py."
     ]
 }
