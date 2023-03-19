@@ -14,7 +14,11 @@ class Model(torch.nn.Module):
     def __init__(self, num_channels: int, num_classes: int) -> None:
         super().__init__()
         """
-        Model
+        Initialize the model.
+        Arguments:
+            num_channels (int): The number of channels in input.
+            num_classes (int): The number of classes in input.
+        Returns: None.
         """
 
         # (32, 32, 3)
@@ -41,6 +45,9 @@ class Model(torch.nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Forward function
+        Arguments:
+            x (torch.Tensor): The input tensor.
+        Returns: The output tensor y.
         """
 
         x = self.conv1(x)
