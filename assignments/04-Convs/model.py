@@ -11,6 +11,10 @@ num_epochs = 8
 
 
 class Model(torch.nn.Module):
+    """
+    Developed computer vision model for CIFAR10 classification.
+    """
+
     def __init__(self, num_channels: int, num_classes: int) -> None:
         super().__init__()
         """
