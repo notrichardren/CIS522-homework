@@ -1,5 +1,6 @@
 import inspect
 from model import Model
+import pytest
 
 
 def test_has_correct_attributes():
