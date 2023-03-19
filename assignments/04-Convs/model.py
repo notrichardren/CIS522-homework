@@ -37,16 +37,16 @@ class Model(torch.nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.conv1(x)
-        x = self.batchnorm1(x) #10, 32, 32
+        x = self.batchnorm1(x)  # 10, 32, 32
         x = self.relu1(x)
-        x = self.maxpool1(x) #10, 16, 16
+        x = self.maxpool1(x)  # 10, 16, 16
 
         x = self.conv2(x)
         x = self.batchnorm2(x)
         x = self.relu2(x)
-        x = self.maxpool2(x) #
+        x = self.maxpool2(x)  #
 
-        x = torch.flatten(x, start_dim = 1) #20, 6, 6
+        x = torch.flatten(x, start_dim=1)  # 20, 6, 6
 
         x = self.fc1(x)
         x = self.relu3(x)
