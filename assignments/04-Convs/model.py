@@ -28,7 +28,7 @@ class Model(torch.nn.Module):
         # (12, 12, 20)
         self.batchnorm2 = torch.nn.BatchNorm2d(20)
         self.relu2 = torch.nn.ReLU()
-        self.maxpool2 = torch.nn.Conv2d(kernel_size=2, stride=2)
+        self.maxpool2 = torch.nn.MaxPool2d(kernel_size=2, stride=2)
         # (6, 6, 20)
 
         self.fc1 = torch.nn.Linear(720, 120)
@@ -37,18 +37,21 @@ class Model(torch.nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.conv1(x)
-        x = self.batchnorm1(x)
+        x = self.batchnorm1(x) #10, 32, 32
         x = self.relu1(x)
-        x = self.maxpool1(x)
+        x = self.maxpool1(x) #10, 16, 16
 
         x = self.conv2(x)
         x = self.batchnorm2(x)
         x = self.relu2(x)
-        x = self.maxpool2(x)
+        x = self.maxpool2(x) #
+
+        x = torch.flatten(x, start_dim = 1) #20, 6, 6
 
         x = self.fc1(x)
         x = self.relu3(x)
         x = self.fc2(x)
+        return x
 
 
 # I asked ChatGPT 3.5 to give some general tips for now to make a good-performing model. I did not use any code from ChatGPT.
