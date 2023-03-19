@@ -102,7 +102,8 @@ class Model(torch.nn.Module):
         return x
 
 
-# I asked ChatGPT 3.5 to give some general tips for now to make a good-performing model. I did not use any code from ChatGPT.
+# I asked ChatGPT 3.5 to give some general tips for now to make a good-performing model. I did not 
+# use any code from ChatGPT.
 
 """
 I can give you some general tips on how to design a neural network architecture that can train 
