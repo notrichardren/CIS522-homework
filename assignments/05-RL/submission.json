@@ -2,11 +2,11 @@
     "assignment_name": "RL",
     "contributors": [
         {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
+            "name": "Richard Ren",
+            "pennkey": "renrich"
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "https://www.youtube.com/watch?v=fnVIgAGhA08 A YouTube video that explains DQN line-by-line"
     ]
 }
